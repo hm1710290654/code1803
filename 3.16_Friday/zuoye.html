@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calculator</title>
+	<style type=text/css>
+		#root{
+			width: 320px;
+			height: 450px;
+			margin: 0 auto;
+		}
+		#rr{
+			width: 300px;
+			height: 50px;
+			font-size: 30px;
+		}
+		table{
+			width: 300px;
+			height: 320px;
+		}
+		button{
+			width: 73px;
+			height: 50px;
+			margin-bottom: 5px;
+			background: #0ff;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<table>
+			<tr>
+				<th><div id="showbox">
+					<input type="text" value="0" id="rr"></div></th>
+				</tr>
+				<tr>
+					<th><div id="shuzi">
+						<table >
+							<tr>
+								<th colspan="3"><button onclick="qingchu()" style="width:227px">clear</button></th>					
+								<th><button onclick="jia()">+</button></th>
+							</tr>
+							<tr>
+								<th><button onclick="dianji1()">1</button></th>
+								<th><button onclick="dianji2()">2</button></th>
+								<th><button onclick="dianji3()">3</button></th>
+								<th><button onclick="jian()">-</button></th>
+							</tr>
+							<tr>
+								<th><button onclick="dianji4()">4</button></th>
+								<th><button onclick="dianji5()">5</button></th>
+								<th><button onclick="dianji6()">6</button></th>
+								<th><button onclick="chen()">*</button></th>
+							</tr>
+							<tr>
+								<th><button onclick="dianji7()">7</button></th>
+								<th><button onclick="dianji8()">8</button></th>
+								<th><button onclick="dianji9()">9</button></th>
+								<th><button onclick="chu()">/</button></th>
+							</tr>
+							<tr>
+								<th colspan="3"><button onclick="dianji0()" style="width:227px">0</button></th>
+								<th><button onclick="dengyu()">=</button></th>
+							</tr>
+						</table>
+					</div>
+				</th>
+			</tr>
+		</table>
+		<script>
+			var num=0;
+			var ysf="+";/*默认为+*/
+			var checkEquel=false;
+			var opFlag=false;
+			function dianji0(){
+				var vvv=document.getElementById('rr').value;/*字符串*/
+				vvv +=0   /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji1(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=1   /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji2(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=2   /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji3(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=3  /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji4(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=4  /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji5(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=5  /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji6(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=6  /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji7(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=7  /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji8(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=8  /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function dianji9(){
+				var vvv=document.getElementById('rr').value ;
+				vvv +=9  /*字符串拼接*/
+				document.getElementById('rr').value = vvv*1;/*数字*/
+			}
+			function jia(){
+				num = document.getElementById('rr').value*1;   /*存储原有的值*/
+				document.getElementById('rr').value = 0;       /*将文本框清空*/
+				ysf = "+";
+			}
+			function jian(){
+				num = document.getElementById('rr').value*1;/*存储原有的值*/
+				document.getElementById('rr').value = 0;/*将文本框清空*/
+				ysf = "-";
+			}
+			function chen(){
+				num = document.getElementById('rr').value*1;/*存储原有的值*/
+				document.getElementById('rr').value = 0;/*将文本框清空*/
+				ysf = "*";
+			}
+			function chu(){
+				num = document.getElementById('rr').value*1;/*存储原有的值*/
+				document.getElementById('rr').value = 0;/*将文本框清空*/
+				ysf = "/";
+			}
+			function dengyu(){
+				var beijiashu = document.getElementById('rr').value;
+				document.getElementById('rr').value = eval(num + ysf + beijiashu*1 );
+			}
+			function qingchu(){
+				// num = document.getElementById('rr').value*1;   /*存储原有的值*/
+				// document.getElementById('rr').value = 0;  
+				// num=0;    
+				// ysf = "+";
+				// /*清零*/
+                rr.value="0";
+				checkEquel=false;
+				opFlag=false;
+				
+			}
+		</script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #root {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #head {
+            /*background: greenyellow;*/
+            height: 100px;
+        }
+
+        #middle {
+            display: flex;
+        }
+
+        #left {
+            width: 300px;
+            /* background: orange;*/
+            top: 100px;
+            left: 0;
+        }
+
+        #right {
+            width: 700px;
+            /*background: gray;*/
+
+        }
+table{
+    width: 400px;
+    height: 300px;
+}
+        #foot {
+            /*background: pink;*/
+            height: 100px;
+        }
+        #ff{
+           /* display: none;*/
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head"></div><!--head end!-->
+    <div id="middle">
+        <div id="left"></div><!--left end!-->
+        <div id="right">
+            <table id="tab">
+                <thead></thead>
+            </table>
+            <form id="ff">
+                <input type="text"id="name">
+                <input type="text" id="age" size="2" maxlength="3" value="18">
+                女 <input type="radio" name="sex" value="女" checked>
+                男 <input type="radio" name="sex" value="男">
+<input type="text" id="sx" size="2" maxlength="1">
+                <input type="button" value="gx" onclick="gx()">
+            </form>
+        </div><!--right end!-->
+    </div><!--middle end!-->
+    <div id="foot"></div>
+</div><!--root end!-->
+
+<script>
+    var persons = [
+        {name: "张三", age: 33, sex: '男'},
+        {name: "老王", age: 45, sex: '男'},
+        {name: "彭桂香", age: 19, sex: '女'},
+        {name: "李卫红", age: 60, sex: '女'},
+        {name: "王二狗", age: 5, sex: '男'},
+    ];
+    var str = "";
+    var str=`
+    <tr>
+    <td>名字</td>
+    <td>年龄</td>
+    <td>性别</td>
+    <td>生肖</td>
+    <td>编辑</td>
+    
+
+    
+    </tr>`
+
+    // function showTable() {   /*建立数据和表格之间的映射*/
+        
+        var shengxiao = ["狗", "鸡", "猴", "羊", "马", "蛇", "龙", "兔", "虎", "牛", "鼠", "猪"];
+        for (var i in persons) {
+            str += "<tr>"
+            for (var j in persons[i]) {
+                str += "<td>" + persons[i][j] + "</td>"
+            }
+              str += `
+              <td >${shengxiao[persons[i].age%12]}</td><td><a href="javascript:del(${i})">delete</a>
+              <a href="javascript:update(${i})">update</a>
+              </td>
+              `
+            str += "</tr>"
+        }
+
+        document.querySelector('#tab').innerHTML += str;
+    // }
+// showTable();
+
+
+// for (var i in persons){
+//    persons[i].shengxiao = shengxiao[persons[i].age%12];
+//    showTable();
+// }
+
+
+
+
+    
+    function del(line) {
+        delete persons[line];
+        // showTable();
+    }
+    var ff=document.getElementById('ff');
+    function update(line){
+        for (var i in persons[line]){
+          ff[i].value=persons[line][i];
+            r=line;
+        }
+     // ff.name.value=persons[line].name;
+     //  ff.age.value=persons[line].age;
+     //  ff.sex.value=persons[line].sex;
+     //  ff.sx.value=persons[line].shengxiao;
+     //  r=persons[line];
+        // showTable();
+         ff.style.display='block';
+    }
+    function gx(){
+         for (var i in persons[r]) {
+            persons[r][i] = ff[i].value;
+   //          r.name=ff.name.value;
+   // r.age=ff.age.value;   
+   //  r.shengxiao=ff.sx.value;
+         // showTable();
+         ff.style.display='none';
+    }
+}
+    </script>
+</body>
+</html>

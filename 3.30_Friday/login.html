@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		margin:100px auto;
+	}
+	h1{
+		text-align: center;
+	}
+	table{
+		margin: 0 auto;
+		width: 300px;
+		height: 150px;
+		background: #efeeee;
+text-align: center;
+	}
+
+	.a{
+		width: 100px;
+		height: 30px;
+	}
+	.a:hover{
+	    background: #00d0ff;	
+	}
+	</style>
+</head>
+<body>
+	<h1>登录界面</h1>
+	<form >
+<table>
+	<tr>
+		<td>姓名：</td>
+		<td><input type="text" name="uName"></td>
+	</tr>
+	<tr>
+		<td>密码：</td>
+		<td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="text-align: center"><input type="button" value="立即登录" onclick="login()" class="a"></td>
+		
+	</tr>
+	
+	<tr>
+		<td colspan="2" style="text-align: center"><input type="button" value="立即注册" onclick="zhuCe()" class="a"></td>
+		
+	</tr>
+</table>
+		
+	</form>
+
+	<script>
+		function login() {
+			var ff = document.forms[0];
+			var uname = ff.uName.value;
+			var pass = ff.pass.value;
+
+			var users = localStorage.getItem('users');
+			if(!users){
+				alert("请先注册");
+				return;
+			}
+			users = JSON.parse(users);
+			if(!Array.isArray(users)){      /*不是数组就清空*/
+				localStorage.clear();
+				alert("登陆失败！请重新注册");
+				return;
+			}
+			var has = users.some(function(item){
+				return item.name==uname && item.pass == pass;
+			});
+			if(has){
+				alert("登陆成功");
+			}else{
+				alert("登陆失败");
+			}
+			// location.href = "xiuGai.html";   /*页面跳转*/
+		}
+function zhuCe() {
+	location.href = "nav.html";
+}
+
+	</script>
+</body>
+</html>

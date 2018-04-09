@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>用户信息编辑界面</h1>
+	<table id="tab"></table>
+	<form id="editUserInfoForm">
+		姓名：<input type="text" name="uName"><br>
+		密码：<input type="password" name="pass"><br>
+		<input type="hidden" name="line">
+		<input type="button" value="确认" id="editok">
+
+
+	</form>
+	<script>
+		var tab = document.querySelector("#tab");
+		var form = document.querySelector("#editUserInfoForm");
+		var usersInfo = localStorage.getItem('users');
+		if(!usersInfo){
+			alert("用户信息为空");
+			throw"用户信息为空";//程序的两种退出方式，return正常退出，throw异常退出
+		}
+		usersInfo = JSON.parse(usersInfo);
+
+		function showTable(usersInfo){
+			var tab_text=usersInfo.map(function(Item,index){
+				return `
+				<tr id="${Item.name}">
+					<td>${Item.name}</td>
+					<td>${Item.pass}</td>
+					<td><a href="javascript:edit('${Item.name}',${index})">修改</a></td>
+				</tr>`;
+			}).join("");//将数组的内容拼接成表格
+			tab.innerHTML = tab_text;
+		}
+		showTable(usersInfo);
+
+		function edit(id,index){//用户点击编辑事件
+			var uxee = document.getElementById(id);
+			// form.style.display="block";
+			form.uName.value=usersInfo[index].name;
+			form.pass.value=usersInfo[index].pass;
+			form.line.value=index;
+		}
+		var editok = document.getElementById('editok');
+		editok.onclick = function(e){
+			// 1、让表单隐藏
+			form.style.display="none";
+			// 2、要修改对应的行
+			var aa=usersInfo[form.line.value];
+			aa.name=form.uName.value;
+			aa.pass=form.pass.value;
+			// 3、修改的值要重新映射到表格
+			showTable(usersInfo);
+			// 4、修改的信息要重新存入本地存储
+			localStorage.setItem('users',JSON.stringify(usersInfo));
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#root>ul li{/*后代选择器*/
+			width: 300px;
+			height: 20px;
+			background: red;
+
+		}
+		.aa+li{
+			background: black !important;
+		}
+		a:hover{/*伪类选择器*/
+			text-decoration: none;
+			color: green;
+		}
+		a:active{/*伪类选择器*/
+			font-size: 40px;
+		}
+
+</style>
+</head>
+<body>
+	<div id="root">
+		<ul>
+			<li></li>
+			<li></li>
+			<li class="aa"></li>
+			<li></li>
+			<li></li>
+			<a href="#">
+				<li>bbbbbbbbbb</li>
+			</a>
+		</ul>
+	</div>
+	<li>aaaaaaaaaaa</li>
+	<b>ssssssssss</b>
+	<ul id="link">
+		<li><a href="#">百度</a></li>
+		<li><a href="#">百度</a></li>
+		<li><a href="#">百度</a></li>
+		<li><a href="#">百度</a></li>
+		<li><a href="#">百度</a></li>
+	</ul>
+</body>
+</html>

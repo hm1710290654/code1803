@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" oninput="haha(this)">
+	<h1 id="alert"></h1>
+
+
+
+	<script>
+		var hh=document.getElementById('alert');
+		function haha(a){
+			hh.innerHTML = a.value;
+		}
+
+
+
+		// oninput:输入就触发
+		// onchange：改变完，失去焦点才触发
+	</script>
+</body>
+</html>
+
+
+<!-- 搞一个文本框，用户输入小写字母，然后同步将它 
+
+
+将以下的文本转置"this is my info ">"ofni ym si siht"
+
+var str="this is my info "
+var arr=new Array()
+arr.push(str[0])
+arr.push()     从后面加入数组
+arr.pop()     先进后出，从数组后面弹出
+arr.shift()   先进先出
+
+
+将以下数组，50岁以上的人去掉，18岁以下的人去掉，显示出来表格，要求把年龄大的排在前面，如果年龄相等，则把男性排在前面
+var users = [
+   		{name: "张三", age: 33, sex: '男'},
+   		{name: "老王", age: 45, sex: '男'},
+   		{name: "彭桂香", age: 33, sex: '女'},
+   		{name: "李卫红", age: 60, sex: '女'},
+   		{name: "王二狗", age: 5, sex: '男'},
+   		];
+
+
+
+-->
+
+<!-- 
+str.trim()||去掉前后空格
+str.search()|查找的条件|在字符串中进行查找
+str.replace()|被替换的字符串，替换成新值|将字符串进行替换
+str.split("")|指定分隔符|将一个字符串切割成为一个字符串数组
+str.substring(3,8)|开始位置，结束位置（不包含）|截取一段字符串
+str.indexOf('We')子字符|查找子字符在字符串中的位置
+ -->

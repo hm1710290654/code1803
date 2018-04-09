@@ -1,0 +1,199 @@
+/*css如何使用
+      1、<style>标签
+      2、link标签
+      3、行内样式*/
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#root {
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 600px;
+    background: #e8e8e8;
+}
+
+#logo {
+    overflow: hidden;
+    height: 100px;
+    font-family: 隶书;
+    font-size: large;
+
+}
+img{
+    width: 70px;
+    height: 80px;
+     display: inline;
+     float: left;
+    border-radius: 50%;
+    margin: 10px;
+    margin-left: 20px;
+}
+h1{
+    margin-top: 25px;
+}
+span{
+    float: right;
+    font-size: 28px;
+    color: yellow;
+    margin-right: 20px;
+}
+#nav {
+    height: 30px;
+    width: 600px;
+    margin: 0px auto;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#nav li {
+    float: left;
+    height: 60px;
+    width: 100px;
+    background: red;
+    line-height: 30px; /*垂直居中*/
+    color: white;
+    transition: all 1s;
+}
+
+.liafter {
+    background: lawngreen;
+
+}
+
+#nav li:hover {
+    transform: translate(0, -50%);
+}
+
+.min {
+    min-height: 200px;
+    position: absolute;
+    top: 130px;
+     padding: 20px;
+}
+
+#left {
+    width: 280px;
+height: 300px;
+}
+
+#left li {
+    width: 240px;
+    height: 40px;
+    border: 0px solid #ccc;
+
+}
+
+#left li>a{
+     text-decoration: none;
+    line-height: 40px;
+    color: #666;
+    margin-left: 20px;
+}
+#left li:hover{
+    background: hotpink;
+}
+#left li:hover a{
+    color: whitesmoke;
+}
+#right {
+    right: 0px;
+    width: 420px;
+
+}
+label{
+    width: 100px;
+    text-align: right;
+   display: inline-block;
+}
+table{
+    border: 1px solid;
+    width: 360px;
+     text-align: center;
+
+}
+#first li{
+   height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-left: 150px;
+}
+
+#second li{
+height: 40px;
+    line-height: 40px;
+font-weight: bold;
+    margin-left: 105px;
+}
+#age{
+    width: 169px;
+    height: 15px;
+}
+#third li{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-left: 148px;
+}
+#third a{
+    text-decoration: none;
+    color: red;
+}
+#for_a li{
+    height: 40px;
+    line-height: 40px;
+font-weight: bold;
+    margin-left: 148px;
+}
+#for_b li{
+    float: left;
+    width: 80px;height: 30px;
+    margin: 0px auto;
+    text-align: center;
+    border-radius: 5px;
+    background: lightpink;
+    line-height: 30px;
+
+}
+#for_b li:hover{
+    background: dodgerblue;
+    color: whitesmoke;
+}
+td{
+    height: 40px;
+
+}
+#forth table{
+    border: 0 solid;
+    width: 320px;
+}
+button{
+    width: 320px;
+    height: 30px;
+}
+button:hover{
+    background: dodgerblue;
+}
+.yincang{
+    display: none;
+}
+#footer {
+    height: 150px;
+    width: 700px;
+    position: absolute;
+    bottom: 0px;
+}
+#foot{
+   width: 700px;
+    font-size: 12px;
+}
+#footer table{
+    border:0 solid;
+}
+/*隐藏的几种方式
+display:none  空间没了
+opsity:0      透明度为0*/

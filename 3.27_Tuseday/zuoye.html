@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+
+
+Date.prototype.toString = function(){
+			return this.getFullYear()+"-"+(this.getMonth()+1)+"-" + this.getDate();
+		}
+var date=new Date();
+var year=date.getFullYear()-23;
+console.log(year);
+var xiaoming=date.setFullYear(year)-date.setMonth(7)-date.setDate(9);
+console.log(date);
+var xiaofangY=date.getFullYear()+5;
+var xiaofangM=date.getMonth()+3;
+var xiaofangD=date.getDate()+12;
+var xiaofang=date.setFullYear(xiaofangY)-date.setMonth(xiaofangM)-date.setDate(xiaofangD);
+console.log(date);
+
+var newA=date.setFullYear(xiaofangY-5+23)-date.setMonth(xiaofangM)-date.setDate(xiaofangD);
+console.log(date.getDay());
+
+
+
+
+		/*setInterval(function(){
+alert(1111);
+
+
+		},1000);*/
+
+/*var nn=Date.now();
+for(var i=0;i<100000;i++);
+console.log(Date.now()-nn);
+
+
+var daxies = ["零","壹","贰","叁","肆","伍"];
+function xiao2da(str){
+	var nStr = "";
+	for(var i=0;i<str.length;i++){
+	nStr+=daxies[str.charAt(i)*1]	
+	}
+	return nStr;
+}
+*/
+
+// var shengxiao = ["狗", "鸡", "猴", "羊", "马", "蛇", "龙", "兔", "虎", "牛", "鼠", "猪"];
+// function sx(a){
+
+// return shengxiao[a%12]
+// }
+	</script>
+</body>
+</html>
+
+
+
+<!-- 小明23岁，生日八月九日，小芳比他小5岁零3个月零12天，问小芳的出生年月日，问小芳在今年的生日是星期几
+
+var persons=[]
+
+
+
+表格：姓名-年龄-性别-生肖
+
+
+
+
+搞一个电子时钟   2018:03:27  13:25:56
+
+
+
+
+
+ -->

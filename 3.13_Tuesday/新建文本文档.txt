@@ -1,0 +1,6 @@
+前端        浏览器端的应用编写
+java基础    java语言的基本特性和基础
+javaWeb     java网络应用基础
+数据库      各种sql数据库和nosql数据库
+java框架    java的常用框架
+服务部署    linux服务器上的应用部署

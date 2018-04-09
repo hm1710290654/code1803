@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{
+			border:1px solid;
+		}
+		.first{
+	background-color:yellow;
+	
+}
+.second{
+	background-color:beige;
+	
+}
+td:hover{
+	    background: black;
+}
+	</style>
+
+</head>
+<body onload="changeColor()">
+<div id="biao">
+</div>
+
+	<script>
+	
+		/*作业：
+		一个表格，要十行，十列，实现隔行换色，鼠标悬停，还要给特殊样式
+
+		99乘法表*/
+var a="<table border='1px' id='tab'>";
+for(var i=1;i<=10;i++){
+	a+="<tr>"
+	for(var j=1;j<=10;j++){
+		a+="<td>"+i+"行"+j+"列"+"</td>"
+	}
+a+="</tr>"
+}
+a+="</table>"
+document.write(a)
+
+
+
+function changeColor(){
+			var mytableRows=document.getElementById('tab').rows;//表格总行数
+			var count=mytableRows.length;   
+			for(var i=0;i<count;i++){
+				if(i%2==0){
+					mytableRows[i].setAttribute("class","first");
+				}
+				else 
+				{
+					mytableRows[i].setAttribute("class","second");
+				}
+
+			}
+		}
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#root{
+			margin: 100px auto;
+			width: 200px;
+			padding: 200px;
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+<div id="root">
+<div id="riqi">
+	<input type="text" id="rq" >
+</div>
+<div id="shijian">
+	<!-- <input type="text" id="sj" > -->
+</div>
+</div>
+
+
+	<script>
+	Date.prototype.toString = function(){
+			return this.getFullYear()+":"+(this.getMonth()+1)+":" + this.getDate()+"    "+ this.getHours()+":"+this.getMinutes()+":"+this.getSeconds();
+	}
+
+
+ // function showriqi(){
+ // 		var date=new Date();
+ //  		rq.value=date+"     星期"+date.getDay();
+ // }
+ // showriqi();
+setInterval(function(){
+
+	var date=new Date();
+	rq.value=date
+	},1000);
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

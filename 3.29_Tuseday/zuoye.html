@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<h1 id="q"></h1>
+</head>
+<body>
+	<script>
+		// function anyway(a,b,cb){
+
+			// 	function dapaidang(aaa){
+				// 		return aaa;
+				// 	}
+				// 	function haha(cb){
+					// 		return cb;
+					// 	}
+					// 	haha(dapaidang(cb))(a,b);
+
+					// }
+					console.log("装修房子");
+					function House(){
+						this.addr="西山公园";
+						this.zhuangxiu=function(visitor){
+							visitor.doThing("钥匙");
+						}
+					}
+					function Visitor(type){
+						this.type=type;
+						this.doThing=function(a,addr){
+							console.log(`我是${this.type}工人，来到${addr}
+								我拿到了${
+									a}
+									我进行装修`);
+						}
+					}
+					var house = new House();
+
+					var mg=new Visitor("木工");
+					mg.doThing=function(a,addr){
+						console.log(`  mald来到${addr}   我是${this.type}工人，我拿到了${
+							a}
+							我进行装修`);
+					}
+
+					house.zhuangxiu(new Visitor("水电工"));
+					house.zhuangxiu(new Visitor("泥工"));
+					house.zhuangxiu(mg);
+					house.zhuangxiu(new Visitor("油漆工"));
+
+					// this.name=name;/*程序中，this表示自己*/
+					// this.show=function(){
+						// 	console.log(this.name+"拿钥匙");
+						// 	console.log("完成");
+
+						// 	var shuidiangong = new zhuangxiu('水电工');
+						// shuidiangong.show();
+
+
+						// 	var nigong = new zhuangxiu('泥工');
+						// 	nigong.show();
+
+						// 	var mugong = new zhuangxiu('木工');
+						// 	mugong.show();
+
+						// 	var youqigong = new zhuangxiu('油漆工');
+						// 	youqigong.show();
+
+
+						console.log("");
+						console.log("");
+
+						["shui","ni","mu","you"].map(function(item){
+							console.log(item+"yaoshi");
+							console.log("完成");
+						})
+
+
+
+
+						//老张开车去东北，撞了
+						//碰到一个东北人，送到医院封5针，好了
+						//名词，要么是对象，要么是属性   动词就一定是方法
+
+
+						LaoZhang = {
+							name:"老张",
+							kaiche:function(car,target){
+								car.go(target);
+							}
+						}
+						DongBei = {
+							name:"中国的东北地区",
+						}
+						YiYuan = {
+							fengZhen:function(Ren){
+								console.log(`这里是一家有良心的医院，我们包治百病，给${Ren.name}缝五针，治好了`);
+							}
+						}
+						DongBeiRen={
+							sendToYiYuan:function(Ren){
+								console.log(`我是一个东北人，东北人都是活雷锋，我送${Ren.name}去医院`);
+								return Ren;
+							}
+						}
+						Car = {
+							go:function(target){
+								console.log(`我是一辆玛莎拉蒂，我现在要去${target.name},发生了车祸`);
+							}
+						}
+						LaoZhang.kaiche(Car,DongBei);
+						var ren = DongBeiRen.sendToYiYuan(LaoZhang);
+						YiYuan.fengZhen(ren);
+					</script>
+				</body>
+				</html>

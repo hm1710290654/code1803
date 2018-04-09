@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+
+
+		function temp(){
+			alert(111);
+		}
+		var d = temp;
+		d();		/*函数可以被赋值给一个变量*/
+		function add(a,b){
+			a+=20;
+			alert(a+b);
+		}
+		add(100,88);	/*方法参数的赋值就像变量的赋值一样*/
+
+		function anyway(a,b,cb){
+
+			function dapaidang(aaa){
+				return aaa;
+			}
+			function haha(cb){
+				return cb;
+			}
+			haha(dapaidang(cb))(a,b);
+
+		}
+		anyway(87,13,add);// 家里房子搞装修
+
+		// aaa();/*aaa is not a function*/
+		bbb(1,2,3);
+		var aaa=function (){
+			console.log("aaa");
+		}
+
+
+		function bbb(a,b){
+			console.log("bbb");
+		}
+
+		// bbb.length
+		// 2
+
+
+
+		var Actor=function(name){
+			this.name=name;/*程序中，this表示自己*/
+			this.show=function(){
+				console.log("I am "+this.name);
+			}
+		}
+		var liudehua = new Actor('刘德华');
+		liudehua.show();
+
+		var liangchaowei = new Actor("梁朝伟");
+		liangchaowei.show();
+
+
+		var name ="彭东明";
+		var ss=liangchaowei.show.bind(window);/*让this指向参数对象*/
+		// 方法.bind(this指向对象)   绑定
+
+
+		function max(a,b){
+			return a>b ? a:b;
+		}
+		// max.apply(null,[10,8])
+		// 	max.apply(null,[10,8])
+		// 10
+		// var arr=[45,34,13,67]
+		// undefined
+		// Math.max.apply(null,arr)
+		// 67
+
+
+		function min(){
+			var arr=Array.prototype.slice.apply(arguments,[0]);
+			console.log(arr);
+			// console.log(arguments[0],arguments[1]);
+		}
+	</script>
+</body>
+</html>
+
+
+<!-- 回调作业
+房子交房，请如下的装修工人来入场装修
+水电工     
+泥工
+木工
+油漆工
+把钥匙给他们 -->

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.btn{
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;/*圆*/
+			border:1px solid;
+			box-shadow:4px 2px 18px 2px;/*阴影*/
+			text-align: center;
+			line-height: 100px;
+			display: block;/*由行内转为块级*/
+			/*display: inline;/*块级变行内*/
+			text-decoration: none;/*去掉链接的下划线*/
+			/*position: absolute;/*定位*/
+			/*left: 50%;
+			top:50%;	*/		
+			*/
+			transition:all 10s;/*过度效果*/
+			animation: aaa 10s ;
+			overflow: hidden;/*溢出部分隐藏掉 */
+		}
+
+		
+@keyframes aaa{	
+	50%{
+		background: gray;
+	}
+	80%{
+		background: pink;
+	}
+	to{
+/*
+params:平移 旋转 缩放
+*/
+transform: translate(500px,0px);
+
+	}
+}
+.btn:hover {
+			background: pink;
+			font-size: 1.2em;
+			color: #00BCD4;
+			transform: 
+			skew(30deg,0deg) scale(0.5,0.5);
+			/*scale 缩放
+translate平移
+skew 翻转
+ratate 旋转*/
+}
+.btn:active{
+	background: red;
+	font-size: 2em;
+	color: white;
+	font-family: 黑体;
+}
+</style>
+
+</head>
+<body>
+	<a href="javascript:void(0)" class="btn"> try</a>
+	<span></span><!-- 行内标签的区域取决于内容 -->
+	<div></div><!-- 块级标签独占一行 -->
+	
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>剪刀石头布</title>
+	<style>
+		.selectImg{
+			display: inline-block;	
+			width: 168px;
+			height: 134px;
+			border:1px solid #ccc;
+			position: relative;
+		}
+		.selectImg>span{
+			position: absolute;
+			top:-25px;
+		}
+		.container{
+			margin: 50px auto;
+			width: 700px;
+			text-align: center;
+		}
+		#result{
+			margin-top: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">  
+		<div id="select">
+			<div class="selectImg" ><img src="jiandao.jpg" id="jiandao" alt=""></div>
+			<div class="selectImg"><img src="shitou.jpg" id="shitou" alt=""></div>
+			<div class="selectImg" ><img src="bu.jpg" id="bu" alt=""></div>
+		</div>
+		<div id="result">
+			<div class="selectImg">
+				<span>你的</span>
+				<img id="mine" src="" alt="">
+			</div>
+			<div class="selectImg">
+				<span>电脑的</span>
+				<img id="cpt" src="" alt=""></div>
+				<div id="count">
+					你赢了<span id="scount">0</span>次
+				</div>
+			</div>
+		</div><!-- 外层容器end -->
+
+		<script type="text/javascript">
+			var ses = ["jiandao","shitou","bu"];
+			function cptGo(index) {
+				setTimeout(function () {
+					var t = document.getElementById("cpt");
+					var rand=Math.floor(Math.random()*3);
+					t.setAttribute('src',ses[rand]+".jpg");
+					if((index-rand+3)%3==1){
+						var s = document.getElementById("scount");
+						s.innerHTML=s.innerHTML*1+1;
+						document
+					.getElementById('cpt').style.opacity=1;
+					}
+					
+				},1000);
+			}
+			ses.forEach((item,index)=>{
+				var t = document.getElementById(item);
+				t.addEventListener('click',function () {
+					document
+					.getElementById('mine')
+					.setAttribute('src',item+".jpg");
+					document
+					.getElementById('cpt').style.opacity=0;
+					cptGo(index);
+				});
+			});
+		</script>
+	</body>
+	</html>

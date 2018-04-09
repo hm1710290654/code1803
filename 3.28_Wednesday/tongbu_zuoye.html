@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<h1 id="big"></h1>
+
+	<input type="text" id="xiao" oninput="litter(this)">
+	<script>
+		var hh=document.getElementById('big');
+		function litter(a){
+			var str=0;
+			for(var i=0;i<a.value.length;i++){
+				str=String.fromCharCode(a.value.charCodeAt(i)-32);
+			}
+			hh.innerHTML +=str;	
+		}
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

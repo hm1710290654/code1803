@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+/*题目：
+    在页面中插入一个表格，表格数据如下 
+    姓名     年龄      性别      等级
+    张三      18        男        黄金
+    李四      12        女        钻石
+    老李      44        男        菜鸡
+    老王      65        男        王者  
+用javascript将以上数据插入到页面中，要求用表格形式展现
+要求实现隔行换色
+要求王者的一行用黄色背景
+str = "";
+str +="<table><tr><th class=>+"zhangsan"+</th>
+*/
+#table{
+	position: relative;
+	width:300px;
+	text-align: center;
+	margin: 0 auto;
+}
+#tab{
+	width:300px;
+}
+.first{
+	background-color:yellow;
+	width: 300px;
+	height: 30px;
+}
+.second{
+	background-color:beige;
+	width: 300px;
+	height: 30px;
+}
+</style>
+<body onload="changeColor()">
+	<div id="table"></div>
+	<script type="text/javascript">
+		var a="";
+		a+='<table id="tab"><thead><th>'+'姓名'+'</th><th>'+'年龄'+'</th><th>'+'性别'+'</th><th>'+'等级'+'</th></thead><tr><td>'+'张三'+'</td><td>'+'18'+'</td><td>'+'男'+'</td><td>'+'黄金'+'</td></tr>'+'<tr><td>'+'李四'+'</td><td>'+'12'+'</td><td>'+'女'+'</td><td>'+'钻石'+'</td></tr>'+'<tr><td>'+'老李'+'</td><td>'+'44'+'</td><td>'+'男'+'</td><td>'+'菜鸡'+'</td></tr>'+'<tr><td>'+'老王'+'</td><td>'+'65'+'</td><td>'+'男'+'</td><td>'+'王者'+'</td></tr></table>';
+		document.getElementById('table').innerHTML+=a;
+
+
+		function changeColor(){
+			var mytableRows=document.getElementById('tab').rows;//表格总行数
+			 var count=mytableRows.length;  
+			for(var i=0;i<count;i++){
+				if(i%2==0){
+					mytableRows[i].setAttribute("class","first");
+				}
+				else 
+				{
+					mytableRows[i].setAttribute("class","second");
+				}
+
+			}
+		}
+	</script>
+</body>
+</html>

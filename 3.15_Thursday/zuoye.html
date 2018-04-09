@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*开始的时候按钮在4个角，圆角按钮，隐藏
+		1秒之后显现出来
+		2秒之后出现阴影
+		开始旋转
+		围着页面转一圈
+		第十秒的时候，来到页面的中间*/
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box{
+			width: 600px;
+			height: 600px;	
+			position: relative;	
+			margin: 0 auto;
+			background: black;	
+		}
+		#left{
+			animation:a1 10s;
+			display: block;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			text-decoration: none;
+		}
+		#right{
+			border-radius: 50%;
+			position: absolute;
+			left: 500px;
+			top: 0px;
+			animation:a2  10s;
+		}
+		#b_left{
+			border-radius: 50%;	
+			position: absolute;
+			left: 0px;
+			top: 500px;
+			animation:a4  10s;
+		}
+		#b_right{
+			border-radius: 50%;
+			position: absolute;
+			left: 500px;
+			top: 500px;
+			animation:a3 10s;
+		}
+		.btn{
+			display: block;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			border:1px solid;
+			text-align: center;
+			line-height: 100px;
+			text-decoration: none;
+			background: #f51f1fc7;
+			color: white;
+			overflow: hidden;/*溢出部分隐藏掉 */
+			
+		}
+
+		@keyframes a1{	
+			from{
+				opacity: 0;
+			}
+			20%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 1);
+				transform: translate(0px,0px) ;
+			}
+			40%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 0.62);
+				transform: translate(500px,0px) ;
+			}
+			60%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 0.62);
+				transform: translate(500px,500px) ;
+			}
+			80%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 0.62);
+				transform: translate(0px,500px) ;
+			}
+			90%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 0.62);
+				transform: translate(250px,250px) ;
+			}
+			to{
+				transform: translate(0px,0px) ;
+			}
+		}
+		@keyframes a2{
+			from{
+				opacity: 0;
+			}
+			20%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 0.62);
+				transform: translate(0px,0px) ;
+			}
+			40%{
+				transform: translate(0px,500px) ;
+			}
+			60%{
+				transform: translate(-500px,500px) ;
+			}
+			80%{
+				transform: translate(-500px,0px) ;
+			}
+			90%{
+				transform: translate(-250px,250px) ;
+			}
+			to{
+				transform: translate(0px,0px) ;
+			}
+		}
+		@keyframes a3{
+			from{
+				opacity: 0;
+			}
+			20%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 0.62);
+				transform: translate(0px,0px) ;
+			}
+			40%{
+				transform: translate(-500px,0px) ;
+			}
+			60%{
+				transform: translate(-500px,-500px) ;
+			}
+			80%{
+				transform: translate(0px,-500px) ;
+			}
+			90%{
+				transform: translate(-250px,-250px) ;
+			}
+			to{
+				transform: translate(0px,0px) ;
+			}
+		}
+		@keyframes a4{
+			from{
+				opacity: 0;
+			}
+			20%{
+				box-shadow: 2px 0px 20px 8px rgba(255, 235, 59, 0.62);
+				transform: translate(0px,0px) ;
+			}
+			40%{
+				transform: translate(0px,-500px) ;
+			}
+			60%{
+				transform: translate(500px,-500px) ;
+			}
+			80%{
+				transform: translate(500px,0px) ;
+			}
+			90%{
+				transform: translate(250px,-250px) ;
+			}
+			to{
+				transform: translate(0px,0px) ;
+			}
+		}
+	}
+</style>
+
+
+</head>
+
+<body>
+	<div id="box">
+		<div id="left">
+			<a href="javascript:void(0)" class="btn" id="a1"> t</a></div>
+			<div id="right">
+				<a href="javascript:void(0)" class="btn" id="a2"> t</a></div>
+				<div id="b_left">
+					<a href="javascript:void(0)" class="btn" id="a4"> t</a></div>
+					<div id="b_right">
+						<a href="javascript:void(0)" class="btn" id="a3"> try</a>
+					</div>
+				</div>
+			</body>
+			</html>

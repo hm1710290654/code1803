@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #root {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #head {
+            /*background: greenyellow;*/
+            height: 100px;
+        }
+
+        #middle {
+            display: flex;
+        }
+
+        #left {
+            width: 300px;
+            /* background: orange;*/
+            top: 100px;
+            left: 0;
+        }
+
+        #right {
+            width: 700px;
+            /*background: gray;*/
+
+        }
+
+        #foot {
+            /*background: pink;*/
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head"></div><!--head end!-->
+    <div id="middle">
+        <div id="left"></div><!--left end!-->
+        <div id="right"></div><!--right end!-->
+    </div><!--middle end!-->
+    <div id="foot"></div>
+</div><!--root end!-->
+</body>
+</html>

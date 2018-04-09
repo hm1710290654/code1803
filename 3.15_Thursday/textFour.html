@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位</title>
+	<style>
+		#content{
+			position: relative;/*相对与之前定位*/
+		background: yellow;
+		height: 100px;
+		width: 100px;
+
+		}
+		p{
+position: absolute;/*绝对定位，相对于父的定位*/
+top: 100px;
+left: 100px;
+background: red;
+		}
+		/*position: fixed;固定定位，相对于浏览器的位置*/
+	</style>
+</head>
+<body>
+<div style="width:100px;height:100px"></div>
+	<div id="content" >
+	<p>我的内容</p>
+	</div>
+</body>
+</html>

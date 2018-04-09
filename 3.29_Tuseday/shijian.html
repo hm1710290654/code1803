@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body{
+			height: 1000px;
+			width: 100%;
+		}
+		#but{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			height: 100px;
+			width: 100px;
+		}
+		#hah{
+			height: 100px;
+			width: 100px;
+			background: gray;
+		}
+		#munue{
+			position: fixed;
+			height: 130px;
+			width: 100px;
+			left: 0;
+			top: 0;
+			/*background: gray;*/
+			border: 1px solid #c1c1c1a8;
+		}
+		input{
+			width: 100px;
+    border: 0px;
+    padding: 0px;
+    height: 20px;
+    background: white;
+    text-align: left;
+    padding-left: 15px;
+    margin-top: 5px;
+
+		}
+		input:hover{
+			background: #ece7e7;
+		}
+	</style>
+</head>
+<!-- <button id="but">点我试试</button>
+	<div id="hah"></div> -->
+	<div id="munue">
+	<input type="button" onclick="javascript:window.location.reload()" value="刷新">
+	
+	<input type="button" value="返回">
+	
+	<input type="button" value="前进">
+
+<input type="button" value="另存为">
+<input type="button" value="检查">
+	</div>
+	<body>
+		<script>
+			//事件3要素：事件源，事件本身，事件的处理逻辑
+			// var but = document.querySelector("#but");
+			// but.onclick = function(e){
+				// 	console.log(e);
+				// }hah.ondrag= function(argument){
+					// 	// alert(111);
+					// }
+					// 
+					munue.style.display='none';
+					document.body.oncontextmenu=function(e){
+
+						e.stopPropagation();//取消冒泡
+						e.preventDefault();//取消浏览器的默认行为
+						munue.style.display='block';
+						munue.style.top=e.clientY+"px";
+						munue.style.left=e.clientX+"px";
+
+					}
+
+					document.body.onmousedown=function(e){
+
+						 munue.style.display='none';
+
+					}
+				</script>
+			</body>
+			</html>

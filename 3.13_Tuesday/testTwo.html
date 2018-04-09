@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>My title</h1><!-- 2em -->
+	<h2>title 2</h2><!-- 1.5em -->
+	<h3>title 3</h3><!-- 1.17em -->
+	<ul>
+		<li><a href="#">Hyperlink</a></li>
+		<li><a href="#">Hyperlink</a></li>
+		<li><a href="#">Hyperlink</a></li>
+		<li><a href="#">Hyperlink</a></li>
+		<li><a href="#">Hyperlink</a></li>
+	</ul><!-- ul是无序的列表，ol是有序的列表 -->
+
+
+	<table border="1"><!-- 表格 -->
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>English level</th>
+			</tr>
+		</thead>
+		<tbody><!-- 表格主体 -->
+			<tr><!-- 行 -->
+				<td>zhangsan</td><!-- 单元格 -->
+				<td colspan="2">eighteen-level four</td><!-- colspan左右合并单元格 -->
+				
+			</tr>
+			<tr>
+				<td>zhangsan</td>
+				<td>eighteen</td>
+				<td>level four</td>
+			</tr>
+		</tbody>
+	</table>
+	<br><!-- 换行 -->
+	<br>
+
+	<div align="center">
+
+		<form ><!-- 表单 -->
+			<table>
+				<tr>
+					<td>username:</td>
+					<td><input id="username"  name="username" placeholder="请输入用户名"></td><!-- placeholder是提示信息 -->
+				</tr>
+				<tr>
+					<td>secret:</td>
+					<td><input type="password" name="password" placeholder="请输入密码"></td><!-- type把密码设置为密文 -->
+				</tr>
+				<tr>
+					<td>sex：</td>
+					<td>
+						<input type="radio" name="sex" value="man">man
+						<input type="radio" name="sex" value="girl" checked>gril
+						</td><!-- 单选 --></tr>
+						<tr>
+					<td>
+						<select>
+							<option value="qqq">qqqqq</option>
+							<option value="aaaa">aaaaa</option>
+						</select>
+					</td><!-- 下拉列表 -->
+				</tr>
+				<tr>
+					<td>hobby:</td>
+					<td>
+						<input type="checkbox" name="hobby" value="basketball">basketball
+						<input type="checkbox" name="hobby" value="football">football
+						<input type="checkbox" name="hobby" value="swimming">swimming
+						<input type="checkbox" name="hobby" value="ping-pong" checked>ping-pong
+					</td><!-- 多选 -->
+				</tr>
+				<tr>
+					<td>birthday</td>
+					<td>
+						<input type="date" name="birthday" max="2020/12/30" ><!-- 日期 -->
+					</tr>
+					<tr>
+						<td  colspan="2" align="center"><button>submit</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<script type="text/javascript">
+			setTimeout(function(){
+				document.getElementById('username').onclick=function(e){
+					e.target.placeholder="";}
+				});	
+			</script><!-- 当鼠标在框里是提示消失 -->
+		</body>
+		</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table id="tab"></table>
+
+
+	<script>
+		var users = [
+
+		{name: "张三", age: 19, sex: '男'},
+		{name: "老王", age: 45, sex: '男'},
+		{name: "彭桂香", age: 19, sex: '女'},
+		{name: "李卫红", age: 60, sex: '女'},
+		{name: "王二狗", age: 5, sex: '男'},
+		];
+
+		users = users.filter(function(a,b,c){
+			return a.age <50 && a.age>=18;
+		});
+		users.sort(function(a,b){
+			var r=b.age-a.age;
+			if(r==0){
+				return(b.sex.charCodeAt(0)-b.sex.charCodeAt(0));
+			}
+			return r;
+		});
+
+
+
+		var str = users.map(function (a){
+			return `
+			<tr>
+				<td>${a.name}</td>
+				<td>${a.age}</td>
+				<td>${a.sex}</td>
+			</tr>`;
+		}).reduce(function(a,b){
+			return a+b;
+		});
+var tab=document.getElementById('tab');
+tab.innerHTML=str;
+
+	</script>
+</body>
+</html>

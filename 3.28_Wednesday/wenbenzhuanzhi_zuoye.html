@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	#root{
+	width: 300px;
+	height: 300px;
+	margin: 0px auto;
+	background: gray;
+	}
+	form{
+		margin: 100px auto;
+	}
+</style>
+
+</head>
+<body>
+<div id="root">
+	<form >
+		<input type="text" id="a" >
+		<input type="text" id="b">
+		<input type="button" onclick="qr()" value="qr"></form>
+</div>
+
+		<script>
+function qr(){
+			var a=document.getElementById('a');
+			var str=a.value.split("");
+			var arr=new Array();
+			var s1=new Array();
+
+			for(var i=0;i<str.length;i++){
+				arr.push(str[i]);	
+			}
+			// console.log(arr);
+			 for(var j=0;j<str.length;j++){
+				s1.push(arr.pop(j))
+			 }
+			b.value =s1.join("");
+}
+
+		</script>
+	</body>
+	</html>

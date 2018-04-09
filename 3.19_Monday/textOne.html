@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form >
+		<input type="text" id="hahaha">
+		<!-- 	document.forms[0].hahaha.value 获取表单的内容 -->
+		男<input type="radio" name="sex" value="man">
+		女<input type="radio" name="sex" value="woman" checked>
+
+	</form>
+	<script>
+		// 一个程序的三要素：输入，输出，数据处理
+		// 输入
+		// 1、用表单
+		// 2、用弹框
+		// 3、URL
+
+
+		// 1、alert
+		// 2、confirm('你确定吗?')
+		// 3、console.log(222)调试
+		//console.info(222)
+		// console.warn(222)警告		
+		// console.error('222')
+
+		// 输出
+		
+		// 变量
+
+		// 数学处理：数学运算，逻辑运算，比较运算，字符串拼接
+		/*插入图片*/
+		var aaa=new Image()
+		aaa.src='game.png'
+		document.body.appendChild(aaa)  
+		aaa.id="xixixi"   /*给aaa一个id名*/
+		document.getElementById('xixixi').style.width="100px"
+
+
+		var hh2=document.createElement('h2')   /*定义一个元素*/
+		hh2.textContent="世界那么大"    /*hh2文本内容*/
+		document.body.appendChild(hh2)   /*获取hh2内容，让内容显示出来*/
+
+		/*数据的类型*/
+		var a=10;
+		a*'40'
+		400
+		a=='10'
+		true
+		a==='10'
+		false
+		Number(a==='10')
+		0
+		Number(a=='10')
+		1
+		Boolean()/*非0的字符串为true*/
+
+
+
+		// 已知一套房：总价120万   首付40万    贷款80万   利率：4.95/100/12   期数：20年
+		// 求每月还款
+		// （1+月利率）**期数*月利率/（（1+月利率）**期数-1）
+		
+		var qishu=prompt("请输入贷款年限")*12;
+		var lilv=0;
+		if(qishu<=60){
+			lilv=4.7/100/12;
+		}
+		else{
+			4.95/100/12;
+		}
+
+		/*lilv = qishu<=60 ? 4.7/100/12 : 4.95/100/12;*/
+
+		
+		var jishu=Math.pow(1+lilv,qishu);
+		var result=(jishu*lilv)/(jishu-1);
+		alert(Math.round(result*800000*qishu-800000));/*Math.round()四舍五入*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript</title>
+</head>
+<body>
+	<h1 id="mirror"></h1>
+
+
+	<form >
+		
+		<input type="text" id="username" >
+		man <input type="radio" name="sex" value="man">
+		woman <input type="radio" name="sex" value="woman" >
+	</form>
+	<script type="text/javascript">
+		// 1、变量的声明式
+		// var name=value;
+
+		// 2、应用程序=输入+输出+数据处理
+
+		//3、数据处理：数学运算
+
+		//4、作业一（计算器)
+
+
+
+		// 输出：
+		// 1、alret('')
+		// 2、console.log('')
+
+
+
+		// 3、页面输出
+		// document.body.innerHTML="<h1>这是我的标题</h1>";  会把内容解析出来
+		// document.body.innerText="<h1>这是我的标题</h1>";  原样输出
+
+		// 4、document.write("<h3>aaaaaa</h3>");
+
+		// 5、var aa=document.createElement('h1');  定义h1的标签
+		// aa.textContent="李白"  定义aa的内容
+		// aa.style.color='red'  定义aa的颜色
+		// document.body.appendChild(aa)   让aa显示出来
+
+
+		// window.onload=function(argument){
+
+		// 	document.write("<h3>aaaaaa</h3>");
+
+		// }
+var ini=document.getElementById('username');
+var mir=document.getElementById('mirror');
+ini.oninput=function(){
+	// 当文本框输入的时候
+	mir.innerHTML=ini.value;
+	// h1标签的内容=文本框的内容
+}
+
+	</script>
+
+</body>
+</html>

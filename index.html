@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;			
+			list-style:none;
+		}
+		body{
+			background: #ff0;
+		}
+		#clock{
+			width: 300px;
+			height: 300px;
+			background: #00ff81;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		#kd-min li{
+			width: 10px;
+			height: 2px;		
+			
+		}
+		#kd-hour li{
+			width: 20px;
+			height: 2px;	
+			
+		}
+		#kd-min li,#kd-hour li{
+			background-color: #fff;
+			position:absolute; 
+			top:50%;
+			left: 50%;
+			transform-origin:left center;
+		}
+		#number{
+			width: 250px;
+			height: 250px;			
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+color: red;
+		}
+		#number li{			
+			position: absolute;			
+		}
+		#circle{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;	/*圆角*/
+			transform: translate(-50%,-50%);
+			background-color: #fff;					
+			position: absolute;/*绝对定位*/			
+			top: 50%;
+			left: 50%;
+		}
+		#pointer li{
+			background-color: #fff;					
+			position: absolute;/*绝对定位*/			
+			top: 50%;
+			left: 50%;
+			transform-origin:left center;
+		}
+		#hour{
+			width: 45px;
+			height: 3px;
+		}
+		#min{
+			width: 80px;
+			height: 2px;
+		}
+		#sec{
+			width: 120px;
+			height: 1px;
+		}
+	</style>
+</head>
+<body>
+	<div id="clock">
+		<ul id="kd-min">
+			<li style=""></li>
+		</ul>
+		<ul id="kd-hour"></ul>
+		<ul id="number"></ul>
+		<ul id="pointer">
+			<li id="hour"></li>
+			<li id="min"></li>
+			<li id="sec"></li>
+			<li id="circle"></li>
+		</ul>		
+	</div>
+	<script type="text/javascript" >
+		function id(a){
+			return document.getElementById(a);
+		}
+		(function () {
+			var hh="";
+			for (var i=0;i<60;i++)
+				hh +="<li style='transform: rotate("+i*6+"deg) translate(135px,0);'></li>";
+			id('kd-min').innerHTML=hh;
+			hh="";
+			for (var i=0;i<12;i++)
+				hh +="<li style='transform: rotate("+i*30+"deg) translate(130px,0);'></li>";
+			id('kd-hour').innerHTML=hh;
+			hh ="";
+			for (var i=1;i<=12;i++){
+				var angl =(i-3)/6*Math.PI;
+				var l =125+125*Math.cos(angl);
+				var t =125+125*Math.sin(angl);
+				hh +="<li style='top:"+t+"px;left: "+l+"px;'>"+i+"</li>";
+			}
+			id('number').innerHTML=hh;
+		})();
+		(function () {
+			function getMyDate() {
+				var dd=new Date();
+				var tt=[
+				dd.getSeconds(),
+				dd.getMinutes(),
+				dd.getHours()
+				];			
+				var zz=[6,6,30].map((item,index)=>tt[index]*item-90);
+				zz[1] +=tt[0]*0.1;
+				zz[2] +=tt[1]*0.5;
+				return zz;
+			}
+			setInterval(function(){
+				var tims=getMyDate();
+				"sec,min,hour".split(",").forEach(function (item,index) {
+					id(item).style.transform="rotate("+tims[index]+"deg)";		
+				});			
+			},1000);
+
+			var tims=getMyDate();
+			"sec,min,hour".split(",").forEach(function (item,index) {
+				id(item).style.transform="rotate("+tims[index]+"deg)";		
+			})
+		})()			
+	</script>
+</body>
+</html>

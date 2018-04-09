@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{/*所有，通配符选择器*/
+			margin: 0;/*外边距（外补丁）*/
+			padding: 0;/*内边距*/
+		}
+		body{/*元素选择器*/
+			background: #cccccc;
+		}
+		div{/*元素选择器，可以选中相同标签的所有元素*/
+			height: 200px;
+			width: 200px;
+			background-color: pink;
+		}
+		#greenbox{/*id选择器的优先级大于元素选择器*/			
+			background:  green;
+			color: black ;
+			background: url(game.png);
+			background-position: 100px -92px;
+		}
+		.brownfont{/*类选择器 大于 id选择器*/
+			color: brown !important;
+		}/*!important能让被替代的恢复,优先级最高*/
+		.haha{/*同位置的类选择器，前面的被后面的替代*/
+			color: white;
+		}
+		/*1、important > 行内样式 > id选择器 > class选择器 > 元素选择器 > 通配符选择器
+		2、相同的优先级情况下，谁在后面谁生效*/
+
+		
+		a[href$=docx]{
+			background: url(QQ图片20180314150707.png);
+			color: red;
+			background-position: -193px -988px;
+			background-repeat: no-repeat;
+			padding-left: 20px;
+					}
+
+a[href$=ppt]{
+			background: url(QQ图片20180314150707.png);
+			color: red;
+			background-position: -193px -1135px;
+			background-repeat: no-repeat;
+			padding-left: 20px;
+			
+
+		}
+	</style>
+</head>
+<body>
+	<div>My content</div>
+	<!-- 块级标签 -->
+	<span class="brownfont">My paragraph</span>
+	<!-- 行内标签 -->
+	<div class="brownfont haha">My another content</div>
+	<ul>
+		<div id="greenbox" class="brownfont">last garagraph</div>
+	</ul>
+	<a href="xxx.docx">我的文档</a>
+	<a href="xxx.ppt">我的ppt文档</a>
+</body>
+</html>

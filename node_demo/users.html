@@ -1,0 +1,48 @@
+<body><table id='tab'>
+		<tr >
+			<td>魏红</td>
+			<td>18</td>
+			<td>女</td>
+		</tr>
+		
+		<tr >
+			<td>张三</td>
+			<td>18</td>
+			<td>男</td>
+		</tr>
+		
+		<tr >
+			<td>老张</td>
+			<td>32</td>
+			<td>男</td>
+		</tr>
+		
+		<tr >
+			<td>小芳</td>
+			<td>34</td>
+			<td>女</td>
+		</tr>
+		
+		<tr >
+			<td>李四</td>
+			<td>49</td>
+			<td>男</td>
+		</tr>
+		
+		<tr >
+			<td>小明</td>
+			<td>88</td>
+			<td>男</td>
+		</tr>
+		</table><script>
+		var tab = document.getElementById('tab');
+var trs = tab.getElementsByTagName('tr');
+for (var i=0;i<trs.length;i++){
+if(i%2==1){
+	trs[i].style.background="red";
+}else{
+	trs[i].style.background="blue";
+}
+
+}
+		</script></body>

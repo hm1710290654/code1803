@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First web page</title>
+	<style>
+		xixi{
+color: blue;
+		}
+	</style>
+</head>
+<body>
+	<xixi>My content</xixi>
+	<script type="text/javascript">
+		setTimeout(function(){
+			document.body.firstElementChild.innerHTML='changed content';
+			document.body.firstElementChild.style.color='black';
+		},2000);
+		/*一秒等于1000毫秒*/
+		/*两秒后颜色由蓝色变为黑色*/
+		setTimeout(function(){
+			
+			document.body.firstElementChild.style.color='red';
+		},3000);/*第三秒颜色由黑变为红色*/
+	</script>
+</body>
+</html>

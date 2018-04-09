@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first page</title>
+    <link rel="stylesheet" type="text/css" href="textOne.css">
+</head>
+<body>
+<!--
+ul li
+form
+table
+-->
+
+<div id="root">
+    <div id="header">
+        <div id="logo">
+            <img src="hongmao.jpg">
+            <h1>虹猫学院</h1>
+            <span >学无止境,勇攀高峰</span>
+
+        </div>
+        <ul id="nav">
+            <li>
+                <div class="libefore">列表项</div>
+                <div class="liafter">列表项</div>
+            </li>
+            <li>
+                <div class="libefore">列表项</div>
+                <div class="liafter">列表项</div>
+            </li>
+            <li>
+                <div class="libefore">列表项</div>
+                <div class="liafter">列表项</div>
+            </li>
+            <li>
+                <div class="libefore">列表项</div>
+                <div class="liafter">列表项</div>
+            </li>
+            <li>
+                <div class="libefore">列表项</div>
+                <div class="liafter">列表项</div>
+            </li>
+            <li>
+                <div class="libefore">列表项</div>
+                <div class="liafter">列表项</div>
+            </li>
+        </ul>
+    </div>
+    <div id="left" class="min">
+        <ul>
+            <li><a href="javascript:show(0)">用户列表</a></li>
+            <li><a href="javascript:show(1)">新增用户</a></li>
+            <li><a href="javascript:show(2)">修改用户</a></li>
+            <li><a href="javascript:show(3)">充值</a></li>
+
+        </ul>
+    </div>
+    <div id="right" class="min">
+        <div class="child-content yincang" id="first">
+            <ul>
+                <li>用户列表</li>
+            </ul>
+            <table border="1">
+                <tbody>
+                <thead>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>等级</th>
+                </thead>
+                <tr>
+                    <td>张三</td>
+                    <td>18</td>
+                    <td>男</td>
+                    <td>黄金</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>12</td>
+                    <td>女</td>
+                    <td>钻石</td>
+                </tr>
+                <tr>
+                    <td>老李</td>
+                    <td>44</td>
+                    <td>男</td>
+                    <td>菜鸡</td>
+                </tr>
+                <tr>
+                    <td>老王</td>
+                    <td>65</td>
+                    <td>男</td>
+                    <td>王者</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="child-content yincang" id="second">
+            <ul>
+                <li>新增用户</li>
+            </ul>
+            <form>
+                <div><label for="name">姓名：</label><input type="text" id="name"></div>
+                <div><label for="pass">密码：</label><input type="password" id="pass"></div>
+                <div><label for="age">出生日期：</label><input type="date" name="birthday" max="2018/12/30" id="age"></div>
+                <div><label>性别：</label>男<input type="radio" name="sex" value="man" checked>
+                    女<input type="radio" name="sex" value="woman"></div>
+                <div><label></label>
+                    <input type="submit" value="添加">
+                    <input type="reset" value="重置">
+                </div>
+            </form>
+
+
+        </div>
+        <div class="child-content yincang" id="third">
+            <ul>
+                <li>修改用户</li>
+            </ul>
+            <table border="1">
+                <tbody>
+                <thead>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>等级</th>
+            <th>修改</th>
+                </thead>
+                <tr>
+                    <td>张三</td>
+                    <td>18</td>
+                    <td>男</td>
+                    <td>黄金</td>
+                    <td><a href="#">修改</a></td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>12</td>
+                    <td>女</td>
+                    <td>钻石</td>
+                   <td><a href="#">修改</a></td>
+                </tr>
+                <tr>
+                    <td>老李</td>
+                    <td>44</td>
+                    <td>男</td>
+                    <td>菜鸡</td>
+                    <td><a href="#">修改</a></td>
+                </tr>
+                <tr>
+                    <td>老王</td>
+                    <td>65</td>
+                    <td>男</td>
+                    <td>王者</td>
+                    <td><a href="#">修改</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="child-content yincang" id="forth">
+            <ul id="for_a">
+                <li>充值</li>
+            </ul>
+            <table>
+                <tr>
+                    <td> <input type="text" placeholder="请输入账号" id="zhanghao" style="width: 320px;height:30px;"></td>
+                </tr>
+                <tr>
+                    <td><ul id="for_b">
+                <li>
+                    <div class="for">10 Q币</div>
+                </li>
+                <li>
+                    <div class="for">50 Q币</div>
+                </li>
+                <li>
+                    <div class="for">100 Q币</div>
+                </li>
+                <li>
+                    <div class="for">其他金额</div>
+                </li>
+</ul></td>
+                </tr>
+                <tr>
+                    <td><button>立即充值</button></td>
+                </tr>
+            </table>
+
+        </div><!--先全部隐藏-->
+    </div>
+    <div id="footer">
+        <table id="foot">
+            <tr>
+                <td> 关于腾讯 | About Tencent | 服务协议 | 隐私政策 | 开放平台 | 广告服务 | 商务洽谈 | 腾讯招聘 | 腾讯公益 | 客服中心 | 网站导航 |版权所有 客户端下载 | </td>
+            </tr>
+            <tr>
+
+            <tr>
+                <td>Copyright 1998 - 2018 Tencent. All Rights Reserved</td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<script>
+    var rr = document.getElementById('right');
+    function show(e) {
+        for (var i = 0; i < 4; i++) {/*因为有四个元素*/
+            if (e == i) {/*被点击的当前对应的div*/
+                rr.children[e].classList.remove('yincang');
+            } else {/*其他的div*/
+                rr.children[i].classList.add('yincang');
+            }
+        }
+
+    }
+setTimeout(function(){
+				document.getElementById('zhanghao').onclick=function(e){
+					e.target.placeholder="";}
+				});
+			<!-- 当鼠标在框里是提示消失 -->
+
+</script>
+</body>
+</html>

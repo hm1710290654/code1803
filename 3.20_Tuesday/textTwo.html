@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #alert {
+    background: #9c9cc7;
+    width: 600px;
+    height: 50px;
+    margin: 100px auto;
+}
+    </style>
+</head>
+<body>
+<h1 id="alert"></h1>
+<script>/*javascript 负责页面的动态脚本*/
+document.getElementById('alert').innerHTML = "I love China"
+setTimeout(function () {
+    document.getElementById('alert').innerHTML = "I love My country"
+}, 2000)
+
+</script>
+</body>
+</html>

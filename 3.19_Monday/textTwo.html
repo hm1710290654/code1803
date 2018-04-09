@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#nav{
+			margin: 100px auto;
+			width: 640px;
+			height: 30px;
+			border-radius: 5px;
+			overflow: hidden;
+		}
+		#nav>li{
+			float: left;
+			width: 80px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background: gray;
+		}
+		#nav>li a{
+			text-decoration: none;
+			color: white;
+		}
+		#nav>li:hover{
+			background: yellow;
+			transition:all 1s;
+		}
+		#nav>li:hover a{
+			color:pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		
+		<ul id="nav">	
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		var nav1=document.getElementById('nav');
+		for(var i=0;i<8;i++){
+			nav1.innerHTML +='<li><a href="javascript:void(0)">列表项</a></li>';
+		}
+		// 语句简洁，元素个数动态的时候
+		var i=0
+		for(console.log(1);
+			i<3 && (console.log(2) || true); 
+			++i && console.log(4)){
+			console.log("循环体");
+		}
+// 1
+// 2
+// 循环体
+// 2
+// 循环体
+// 4
+// 2
+// 循环体
+// 4
+/*for(i=0;true;i++){
+	alert("你被黑了");
+}死循环*/
+
+	</script>
+</body>
+</html>

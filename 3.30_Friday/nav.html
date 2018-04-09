@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 50px auto;
+		}
+		h1{
+			text-align: center;
+		}
+		.a{
+			width: 80px;
+			text-align: right;
+		}
+		.b{
+			width: 50px;
+			text-align: right;
+		}
+		table{
+			width: 460px;
+			height: 350px;
+			margin:0 auto;
+			background: #efeeee;
+			padding: 15px;
+		}
+		button{
+			height: 30px;
+			width: 100px;
+		}
+		.ab{
+			width: 100px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h1>注册页面</h1>
+	<form>
+		<table>
+			<tr>
+				<td class="a">姓名：</td>
+				<td colspan="5"><input type="text" name="uName"></td>
+			</tr>
+			<tr>
+				<td class="a">密码：</td>
+				<td colspan="5"><input type="password" name="pass"></td>
+			</tr>
+			<tr>
+				<td class="a">确认密码：</td>
+				<td colspan="5"><input type="password" id="passagian"></td>
+			</tr>
+			<tr>
+				<td class="a">昵称：</td>
+				<td colspan="5"><input type="text" name="niCheng"></td>
+			</tr>
+			<tr>
+				<td class="a">性别：</td>
+				<td colspan="5">男<input type="radio" name="sex" value="nan">
+					女<input type="radio" name="sex" value="nv"></td>
+					
+				</tr>
+				<tr><td colspan="5">
+					<input type="date" name="birth" oninput="SX()">
+				</td></tr>
+				<tr>
+					<td class="b">年龄：</td>
+					<td><input type="text" name="age" size="4" ></td>
+					<td class="b">生肖：</td>
+					<td><input type="text" name="shengXiao" size="5"  ></td>
+					<tr>
+						<td class="a">国籍：</td>
+						<td>
+<select name="" id="select" onfocus="selectFocus()">
+	<option value="" onclick="selectClick">中国</option>
+	<option value="" onclick="selectClick">中国</option>
+	<option value="" onclick="selectClick">中国</option>
+	<option value="" onclick="selectClick">中国</option>
+	<option value="" onclick="selectClick">中国</option>
+<option value="" onclick="selectClick">中国</option>
+<option value="">中国</option>
+	<option value="">中国</option>
+</select>
+
+
+						<input type="text" name="guoJi" size="4" value="中国"></td>
+						<td class="b">籍贯：</td>
+						<td><input type="text" name="jiGuan" size="5"></td>
+						<td class="b">民族：</td>
+						<td><input type="text" name="minZu" size="2"></td>
+					</tr>
+					<tr>
+						<td class="a">身高：</td>
+						<td><input type="text" name="shenGao" size="4"> m</td>
+						<td class="b">体重：</td>
+						<td><input type="text" name="tiZhong" size="5"> kg</td>
+					</tr>
+					<tr>
+						<td colspan="5" style="text-align: center " ><input type="button" value="立即注册" onclick="regist()" class="ab"></td>
+					</tr>
+					<tr>
+						<tr>
+							<td colspan="5" style="text-align: center " ><input type="button" value="立即登录" onclick="login()" class="ab"></td>
+
+						</tr>
+					</tr>
+				</table>
+			</form>
+			
+
+
+			<script>
+var a=document.getElementById("select")
+function selectFocus(){
+	a.setAttribute("size","4");
+}
+function selectClick(){
+a.removeAttribute("size");
+a.blur();
+this.setAttribute("selected","");
+}
+
+
+
+
+				var ff=document.forms[0];
+
+				var users = localStorage.getItem('users');/*获取本地存储*/
+				users && (users=JSON.parse(users))      /*如果存在该内容则进行JSON的解析*/
+				users || (users=[])   /*如果不存在该内容则创建一个数组*/
+
+
+
+
+				function SX(){
+					var date=new Date();
+sui=date.getFullYear()-parseInt(ff.birth.value);
+					var shengxiao = ["狗", "鸡", "猴", "羊", "马", "蛇", "龙", "兔", "虎", "牛", "鼠", "猪"];
+					ff.age.value=sui;
+					ff.shengXiao.value=shengxiao[ff.age.value%12];
+				}
+
+
+				function regist() {
+					var name = ff.uName.value;    /*获取用户文本框*/
+				var pass=ff.pass.value;        /*获取密码*/
+				var  passagian = document.getElementById('passagian').value;
+				var sex=ff.sex.value;
+				var age=ff.age.value;
+				var shengXiao=ff.shengXiao.value;
+				
+				var niCheng=ff.niCheng.value;
+				var guoJi=ff.guoJi.value;
+				var jiGuan=ff.jiGuan.value;
+				var minZu=ff.minZu.value;
+				var shenGao=ff.shenGao.value;
+				var tiZhong=ff.tiZhong.value;
+
+
+					if(passagian!==pass){
+						alert("两次密码输入不一致，请重新输入");
+						return;
+					}
+					if(name==0 || pass==0){
+						alert("姓名或密码为空，请重新输入");
+						return;
+					}
+
+					var obj = {
+						name:name,
+						pass:pass,
+						sex:sex,
+						age:age,
+						shengXiao:shengXiao,
+						niCheng:niCheng,
+						guoJi:guoJi,
+						jiGuan:jiGuan,
+						minZu:minZu,
+						shenGao:shenGao,
+						tiZhong:tiZhong,
+
+
+					}
+					users.push(obj);   /*将新注册的用户添加到用户列表*/
+					localStorage.setItem('users',JSON.stringify(users));      /*将用户列表重新写入本地存储*/
+					location.href = "login.html";   /*页面跳转*/
+					
+				}
+				function login(){
+					location.href = "login.html";   /*页面跳转*/
+				}
+
+			</script>
+		</body>
+		</html>
+
+<!--
+ 作业：
+ 1、要求做验证
+ 密码不一致不允许注册
+ 用户名或密码为空不允许注册
+ 2、表单的要求，都要漂亮一点
+ 3、要添加修改用户信息功能
+ 用户信息要求包含：
+		 -姓名
+		 -密码
+		 -年龄
+		 -昵称
+		 -籍贯
+		 -性别
+		 -民族
+		 -国籍
+		 -身高
+		 -体重
+		 -生肖
+
+
+
+
+
+
+ -->
